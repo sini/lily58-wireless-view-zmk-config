@@ -88,18 +88,18 @@
 
         raise_layer {
 // -----------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |      |                   |      |       |      |      |       |  DEL  |
+// |       |     |     | MUTE |  VDN |  VUP |                   | STOP |  PLAY | PP   | PREV |  NEXT |  DEL  |
 // |  CAPS |  1  |  2  |  3   |  4   |  5   |                   | PRSC |  HOME | PGDN | PGUP |  END  |  INS  |
 // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  ^   |   <-  |  v   |  ^   |  ->   |       |
 // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |  =   |  [   |   ]   |   \   |
 //                     |      |      |      |        |  |       |      |       |      |
             display-name = "RAISE";
             bindings = <
-&trans     &trans  &trans  &trans   &trans   &trans                     &trans       &trans     &trans     &trans    &trans     &kp DEL
-&kp CLCK   &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                     &kp PSCRN    &kp HOME   &kp PG_UP  &kp PG_DN &kp END    &kp INS
-&kp F1     &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &kp CARET    &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
-&kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
-                           &trans   &trans   &trans   &trans    &trans  &trans       &trans     &trans
+&trans     &trans  &trans  &kp K_MUTE  &kp K_VOL_DN &kp K_VOL_UP               &kp C_STOP   &kp C_PLAY &kp C_PP   &kp C_PREV &kp C_NEXT &kp DEL
+&kp CLCK   &kp N1  &kp N2  &kp N3      &kp N4       &kp N5                     &kp PSCRN    &kp HOME   &kp PG_UP  &kp PG_DN  &kp END    &kp INS
+&kp F1     &kp F2  &kp F3  &kp F4      &kp F5       &kp F6                     &kp CARET    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
+&kp F7     &kp F8  &kp F9  &kp F10     &kp F11      &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &kp BSLH
+                           &trans      &trans       &trans   &trans    &trans  &trans       &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;

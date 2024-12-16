@@ -79,18 +79,18 @@
 
         raise_layer {
 // --------------------------------------------------------------------------------------------------------
-// |   |   |      |       |  MSL  | MSR |                    | STOP |  PLAY | PP   | PREV |  NEXT |  DEL  |
-// |   |   |  M_2 |  M_U  |  M_1  | MSU |                    | PRSC |  HOME | PGDN | PGUP |  END  |  INS  |
-// |   |   |  M_L |  M_D  |  M_R  | MSD |                    | VUP  |   <-  |  v   |  ^   |  ->   |       |
-// |   |   |  M_5 |  M_4  |  M_3  |     |       |    |       | VDN  |   -   |  =   |  [   |   ]   |       |
+// |   |   |  MSL |  MSR  |  M_4  | M_5 |                    | STOP |  PLAY | PP   | PREV |  NEXT |  DEL  |
+// |   |   |  M_2 |  M_U  |  M_1  | M_3 |                    | PRSC |  HOME | PGDN | PGUP |  END  |  INS  |
+// |   |   |  M_L |  M_D  |  M_R  | MSU |                    | VUP  |   <-  |  v   |  ^   |  ->   |       |
+// |   |   |      |       |       | MSD |       |    |       | VDN  |   -   |  =   |  [   |   ]   |       |
 //                |       |       |     |       |    |       |      |       |      |
             display-name = "RAISE";
             bindings = <
-&trans  &trans  &trans         &trans          &msc SCRL_LEFT  &msc SCRL_RIGHT              &kp C_STOP   &kp C_PLAY &kp C_PP   &kp C_PREV &kp C_NEXT &kp DEL
-&trans  &trans  &mkp MB2       &mmv MOVE_UP    &mkp MB1        &msc SCRL_UP                 &kp PSCRN    &kp HOME   &kp PG_UP  &kp PG_DN  &kp END    &kp INS
-&trans  &trans  &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN               &kp K_VOL_UP &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
-&trans  &trans  &mkp MB5       &mkp MB4        &mkp MB3        &mkp MB4  &trans     &trans  &kp K_VOL_DN &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &trans
-                               &trans          &trans          &trans    &trans     &trans  &trans       &trans     &trans
+&trans  &trans  &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MB4        &mkp MB5                   &kp C_STOP   &kp C_PLAY &kp C_PP   &kp C_PREV &kp C_NEXT &kp DEL
+&trans  &trans  &mkp MB2       &mmv MOVE_UP    &mkp MB1        &mkp MB3                   &kp PSCRN    &kp HOME   &kp PG_UP  &kp PG_DN  &kp END    &kp INS
+&trans  &trans  &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_UP               &kp K_VOL_UP &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
+&trans  &trans  &trans         &trans          &mkp MB3        &msc SCRL_DOWN  &trans     &trans  &kp K_VOL_DN &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &trans
+                               &trans          &trans          &trans          &trans     &trans  &trans       &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;

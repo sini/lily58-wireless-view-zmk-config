@@ -1,5 +1,10 @@
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 25
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25    // default: 10
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -85,7 +90,7 @@
 &trans  &msc SCRL_LEFT  &msc SCRL_UP   &mmv MOVE_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT              &kp PSCRN    &kp HOME   &kp PG_UP  &kp PG_DN  &kp END    &kp INS
 &trans  &trans          &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &mkp MB3                     &kp K_VOL_UP &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
 &trans  &trans          &mkp MB5       &mkp MB2        &mkp MB1        &mkp MB4  &trans     &trans  &kp K_VOL_DN &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &trans
-                                       &trans          &trans          &trans    &tran      &trans  &trans       &trans     &trans
+                                       &trans          &trans          &trans    &trans     &trans  &trans       &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;

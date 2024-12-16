@@ -3,8 +3,8 @@
  *
  * SPDX-License-Identifier: MIT
  */
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 25    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -78,19 +78,19 @@
         };
 
         raise_layer {
-// ----------------------------------------------------------------------------------------------------------------
-// |      |      |      |       |       |       |                    | STOP |  PLAY | PP   | PREV |  NEXT |  DEL  |
-// |      |  MSL |  MSU |  M_U  |  MSD  | MSR   |                    | PRSC |  HOME | PGDN | PGUP |  END  |  INS  |
-// |      |      |  M_L |  M_D  |  M_R  | M_3   |                    | VUP  |   <-  |  v   |  ^   |  ->   |       |
-// |      |      |  M_5 |  M_2  |  M_1  | M_4   |       |    |       | VDN  |   -   |  =   |  [   |   ]   |       |
-//                      |       |       |       |       |    |       |      |       |      |
+// --------------------------------------------------------------------------------------------------------
+// |   |   |      |       |  MSL  | MSR |                    | STOP |  PLAY | PP   | PREV |  NEXT |  DEL  |
+// |   |   |  M_2 |  M_U  |  M_1  | MSU |                    | PRSC |  HOME | PGDN | PGUP |  END  |  INS  |
+// |   |   |  M_L |  M_D  |  M_R  | MSD |                    | VUP  |   <-  |  v   |  ^   |  ->   |       |
+// |   |   |  M_5 |  M_4  |  M_3  |     |       |    |       | VDN  |   -   |  =   |  [   |   ]   |       |
+//                |       |       |     |       |    |       |      |       |      |
             display-name = "RAISE";
             bindings = <
-&trans  &trans          &trans         &trans          &trans          &trans                       &kp C_STOP   &kp C_PLAY &kp C_PP   &kp C_PREV &kp C_NEXT &kp DEL
-&trans  &msc SCRL_LEFT  &msc SCRL_UP   &mmv MOVE_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT              &kp PSCRN    &kp HOME   &kp PG_UP  &kp PG_DN  &kp END    &kp INS
-&trans  &trans          &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &mkp MB3                     &kp K_VOL_UP &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
-&trans  &trans          &mkp MB5       &mkp MB2        &mkp MB1        &mkp MB4  &trans     &trans  &kp K_VOL_DN &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &trans
-                                       &trans          &trans          &trans    &trans     &trans  &trans       &trans     &trans
+&trans  &trans  &trans         &trans          &msc SCRL_LEFT  &msc SCRL_RIGHT              &kp C_STOP   &kp C_PLAY &kp C_PP   &kp C_PREV &kp C_NEXT &kp DEL
+&trans  &trans  &mkp MB2       &mmv MOVE_UP    &mkp MB1        &msc SCRL_UP                 &kp PSCRN    &kp HOME   &kp PG_UP  &kp PG_DN  &kp END    &kp INS
+&trans  &trans  &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN               &kp K_VOL_UP &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
+&trans  &trans  &mkp MB5       &mkp MB4        &mkp MB3        &mkp MB4  &trans     &trans  &kp K_VOL_DN &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &trans
+                               &trans          &trans          &trans    &trans     &trans  &trans       &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
